@@ -32,7 +32,7 @@ It is an ensemble learning method that uses multiple decisions tree to obtain a 
 #### Random Forest Example
 
 
-![image](notebook/img/RF.PNG) 
+![image](notebook/img/RF.png) 
 
  
 ### Recurrent Neural Networks (RNNs)
