@@ -1,7 +1,7 @@
 <!-- #region -->
 # Forecasting with Ensembles and LSTM
 
-Forecasting closing price using 
+Forecasting closing price using stock market data NASDAQ
 
 
 ## Objective
@@ -92,8 +92,18 @@ Credits: [Colah](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 #### Facebook Prophet
 
-based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects.
+It is a tool based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality. It can be used for modelling time series with complex seasonality effects, it is specially useful for modeling daily data.
 <!-- #endregion -->
+
+## Results
+
+```python
+
+```
+
+```python
+
+```
 
 <!-- #region -->
 https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks
