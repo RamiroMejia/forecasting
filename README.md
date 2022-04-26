@@ -32,10 +32,8 @@ It is an ensemble learning method that uses multiple decisions tree to obtain a 
 #### Random Forest Example
 
 
-<div>
-<img src="notebook/img/RF.PNG" width="500"/>
-</div>
- 
+![image](notebook/img/RF.PNG) 
+
  
 ### Recurrent Neural Networks (RNNs)
 
