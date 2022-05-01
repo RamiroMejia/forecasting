@@ -137,21 +137,26 @@ Using Prophet, the prediction has a poor performance, using different values for
 
 
 LSTM was close to capture the pattern, not perfect accuraccy but the model is close to predict the correct values.
-<!-- #endregion -->
-
-```python
-
-```
-
-<!-- #region -->
-https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks
 
 
+# Dependencies
 
-https://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
-<!-- #endregion -->
+| Package      | Version |
+|--------------|---------|
+| matplotlib   | 3.5.1   |
+| numpy        | 1.22.3  |
+| pandas       | 1.4.2   |
+| torch        | 1.11.0  |
+| fbprophet    | 0.7.1   |
+| scikit-learn | 1.0.2   |
+| yfinance     | 0.1.70  |
 
-```python
 
-```
+
+# References
+
+- [1] Christopher Olah - [article](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+- [2] Shervine Amidi CS 230 - Deep Learning - [notes](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)
+- [3] Sampling Generative Networks - [paper](https://arxiv.org/abs/1609.04468)
+- [4] Jason Brownlee article about RNNs - [article](https://scholar.google.com/citations view_op=view_citation&hl=en&user=hVaJhRYAAAAJ&citation_for_view=hVaJhRYAAAAJ:5ugPr518TE4C)
