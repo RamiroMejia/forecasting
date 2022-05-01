@@ -105,7 +105,8 @@ It is a tool based on an additive model where non-linear trends are fit with yea
 #### Prediction results forecasting 20 Business days
 
 
-![rf_predict](notebook/img/RF_predict.PNG) 
+<img src="notebook/img/RF_predict.PNG" width="400" height="230">
+
 
 
 
@@ -117,8 +118,8 @@ The ML approach shows a poor performance, the model was able to capture the down
 
 #### Prediction results 60 business days
 
+<img src="notebook/img/fb_prophet.PNG" width="400" height="230">
 
-![fb_predict](notebook/img/fb_prophet.PNG) 
 
 
 
@@ -130,7 +131,8 @@ Using Prophet, the prediction has a poor performance, using different values for
 #### Prediction results 53 business days
 
 
-![fb_predict](notebook/img/LSTM_predict.PNG) 
+<img src="notebook/img/LSTM_predict.PNG" width="400" height="230">
+
 
 
 
