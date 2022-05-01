@@ -97,9 +97,45 @@ It is a tool based on an additive model where non-linear trends are fit with yea
 
 ## Results
 
-```python
+<!-- #region -->
+### Random Forest Regression
 
-```
+
+
+#### Prediction results forecasting 20 Business days
+
+
+![rf_predict](notebook/img/RF_predict.PNG) 
+
+
+
+The ML approach shows a poor performance, the model was able to capture the downward trend of the series.
+
+
+
+### Facebook Prophet
+
+#### Prediction results 60 business days
+
+
+![fb_predict](notebook/img/fb_prophet.PNG) 
+
+
+
+Using Prophet, the prediction has a poor performance, using different values for `changepoint_prior_scale` did not improve results. Prediction are close to the average value of the series.
+
+
+### LSTM model
+
+#### Prediction results 53 business days
+
+
+![fb_predict](notebook/img/LSTM_predict.PNG) 
+
+
+
+LSTM was close to capture the pattern, not perfect accuraccy but the model is close to predict the correct values.
+<!-- #endregion -->
 
 ```python
 
