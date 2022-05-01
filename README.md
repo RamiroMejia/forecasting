@@ -1,8 +1,7 @@
 <!-- #region -->
 # Forecasting with Ensembles and LSTM
 
-Forecasting closing price using stock market data NASDAQ
-
+Forecasting closing price using Apple (AAPL - NASDAQ) stock market data .
 
 ## Objective
 <!-- #endregion -->
@@ -159,4 +158,4 @@ LSTM was close to capture the pattern, not perfect accuraccy but the model is cl
 - [1] Christopher Olah - [article](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 - [2] Shervine Amidi CS 230 - Deep Learning - [notes](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)
 - [3] Sampling Generative Networks - [paper](https://arxiv.org/abs/1609.04468)
-- [4] Jason Brownlee article about RNNs - [article](https://scholar.google.com/citations view_op=view_citation&hl=en&user=hVaJhRYAAAAJ&citation_for_view=hVaJhRYAAAAJ:5ugPr518TE4C)
+- [4] Jason Brownlee article about RNNs - [article](https://scholar.google.com/citationsview_op=view_citation&hl=en&user=hVaJhRYAAAAJ&citation_for_view=hVaJhRYAAAAJ:5ugPr518TE4C)
