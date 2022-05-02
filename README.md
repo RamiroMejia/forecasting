@@ -7,16 +7,14 @@ Forecasting closing price using Apple (AAPL - NASDAQ) stock market data .
 <!-- #endregion -->
 
 <!-- #region -->
-Time series forecasting represents a challenging predictive task for researchers, since sequential dependencies shoud be addressed by the model, in other words, we aim to understand the past to be able to predict the future accurately.
+Time series forecasting represents a challenging predictive task for researchers, since sequential dependencies on the data should be addressed by the model. Forecasting aims to understand the past to be able to predict the future accurately.
 
-Famous benchkmark models such as [ARIMA](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average), [Exponential Smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing) or baseline methods such as naive, average or drift, are popular among researchers because of their relatively accurate forecast and their ease of use and interpretation. These models usually require analysis of the series to find the correct number lags and autocorrelations, in some cases domain expertise it is also needed to have an accurate model. 
+The benchkmark models such as [ARIMA](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average), [Exponential Smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing) or baseline methods such as naive, average or drift, are popular among researchers because of their ease of use and interpretation. These models usually require a deeper analysis of the time-series to find the correct number lags, trends and seasonality effects. In some cases, domain expertise it is needed to have accurate models. 
 
-In the world famous Makridakis Competitions also known as [M-competitions](https://en.wikipedia.org/wiki/Makridakis_Competitions) where teams evaluate and compare the accuracy of different time series forecasting methods. During the first competitions, the statistically sophisticated methods did not provide significantly better forecasts than simpler ones.  Nevertheless, since the lasts M competitions, Machine Learning and Neural Network approaches proven to be effective and outperformed simple methods, one key advantage of these methods is that they require less domain expertise of the series and little configuration parameters.
-
-
-This project aims to explore more complex algorithms for forecasting. In particular this repository explores Machine Learning ensemble (Random Forest) model, Deep Learning (LSTM-RNN) method and the [Facebook Prophet](https://facebook.github.io/prophet/) tool to forecast market data extracted from [Yahoo! Finance's API](https://www.yahoofinanceapi.com/)
+In the Makridakis Competitions also known as [M-competitions](https://en.wikipedia.org/wiki/Makridakis_Competitions) where teams evaluate and compare the accuracy of different time series forecasting methods. The statistcal sophisticated models did not provide significantly better forecasts than simpler ones, in particular during the first rounds of competitions.  Nevertheless, since the lasts M competitions, Machine Learning and Neural Network approaches proven to be effective and outperformed simple methods. One key advantage of these methods is that they require less domain expertise of the series and little configuration parameters.
 
 
+This project aims to explore more complex algorithms for forecasting. In particular, this repository explores a Machine Learning ensemble (Random Forest) model, a Deep Learning (LSTM-RNN) method and the [Facebook Prophet](https://facebook.github.io/prophet/) tool to forecast time-series. The used in this project was extracted from [Yahoo! Finance's API](https://www.yahoofinanceapi.com/)
 
 
 
@@ -25,7 +23,7 @@ This project aims to explore more complex algorithms for forecasting. In particu
 ### Random Forest Regression
 
 
-It is an ensemble learning method that uses multiple decisions tree to obtain a better predictive performance than could be obtained of utilizing a single tree. Using this collection of trees, Random Forest averages the predictions of the decisions trees, improving the predictive accuracy while controlling over-fitting.
+It is an ensemble learning method that uses multiple decision trees to obtain a better predictive performance. Using a collection of random decision trees, Random Forest averages their predictions, improving the predictive accuracy while controlling over-fitting.
 
 
 #### Random Forest Example
@@ -36,10 +34,9 @@ It is an ensemble learning method that uses multiple decisions tree to obtain a 
  
 ### Recurrent Neural Networks (RNNs)
 
+Are a class of artificial neural networks that allow previous outputs to be used as inputs while having hidden states. These types of neural networks are useful for modeling sequential data and to give a notion of temporal dependence to the model. Recurrent Neural Networks's architecture contains loops that allow information to persist using hidden states.
 
-Are a class of artificial neural networks that allow previous outputs to be used as inputs while having hidden states. These type of neural networks are useful for modeling sequential data and to give a notion of temporal dependece to the model. Recurrent Neural Networks's architechture contain loops that allow information to persist using the mentioned hidden state.
-
-The main difference between non-recurrent architectures and recurrent architectures is the set of weights that connect the hidden layer from previous time steps to the current hidden layer.
+The main difference between non-recurrent architectures and recurrent architectures is the set of weights that connect the hidden layer through time steps.
 
 
 #### Unrolled and recursive architecture of RNNs
@@ -54,9 +51,9 @@ Credits: [simplilearn](https://www.simplilearn.com/tutorials/deep-learning-tutor
 
 The main short coming of this architecture is that it forgets the temporal dependencies really quickly. This issue is due to [vanishing gradient](https://en.wikipedia.org/wiki/Vanishing_gradient_problem). 
 
-During the training phase of artificial neural networks with gradient-based methods and backpropagation, on each iteration weights (of NNs) update proportionally to the partial derivative of the error function with respect to the current weight. When training deep networks the derivates could get exponentially small. This problem is known as ***Vanishing Gradient***. This issue could prevet our model to capture long-term dependencies happening at the beginning of the sequence. 
+During the training phase of artificial neural networks with gradient-based methods and backpropagation, on each iteration weights (of NNs) update proportionally to the partial derivative of the error function with respect to the current weight. When training deep networks the derivates could get exponentially smaller. This problem is known as ***Vanishing Gradient***. This issue could prevent our model to capture long-term dependencies happening at the beginning of the sequence. 
 
-To address this ***memory*** problem, more complex models had been designed ,one of the, is Long Short Term Memory (LSTM).
+To address this ***memory*** problem, more complex models had been designed one is Long Short Term Memory (LSTM).
 
 
 
@@ -69,13 +66,13 @@ LSTMs have a chain-like architecture, however, instead of having a single neural
 
 To carry information through the chain LSTMs feature a cell state.
 
-The LSTM remove or add information to this cell state throug special structures called **gates**. The gates are composed by a feedforward layer and a sigmoid activation function. This sigmoid function determines how much information remove (*forget*) or add (*remember*) to the chain.
+The LSTM remove or add information to this cell state through special structures called **gates**. The gates are composed by a feedforward layer and a sigmoid activation function. This sigmoid function determines how much information to remove (*forget*) or add (*remember*) to the chain.
 
-In LSTM architectures there are three main gates:
+In LSTM architectures, there are three main gates:
 
 - Forget gate: Deletes information from the sequence that is not needed. 
 
-- Input gate : Decides what new information is going to be stored in the cell state. First, it passes the input of the sequence through a sigmoid layer, then  passes the input through a tahn activation to create a vector of candidates of relevant information to remember.
+- Input gate : Decides what new information is going to be stored in the cell state. First, it passes the input of the sequence through a sigmoid layer, then passes the input through a tahn activation to create a vector of candidates of relevant information to remember.
 
 The cell state is updated via a pointwise operation between the two outputs of these gates.
 
@@ -91,7 +88,8 @@ Credits: [Colah](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 #### Facebook Prophet
 
-It is a tool based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality. It can be used for modelling time series with complex seasonality effects, it is specially useful for modeling daily data.
+It is a tool based on an additive model where non-linear trends are fitted with yearly, weekly, and daily seasonality. It can be used for modelling time series with complex seasonality effects, it is in particular useful for modeling daily data.
+
 <!-- #endregion -->
 
 ## Results
@@ -122,7 +120,7 @@ The ML approach shows a poor performance, the model was able to capture the down
 
 
 
-Using Prophet, the prediction has a poor performance, using different values for `changepoint_prior_scale` did not improve results. Prediction are close to the average value of the series.
+Using Prophet, the prediction has a poor performance, using different values for `changepoint_prior_scale` did not improve results. Predictions are close to the average value of the series.
 
 
 ### LSTM model
@@ -135,7 +133,7 @@ Using Prophet, the prediction has a poor performance, using different values for
 
 
 
-LSTM was close to capture the pattern, not perfect accuraccy but the model is close to predict the correct values.
+LSTM was close to capture the pattern, not perfect accuracy, but the model is close to predict the correct values.
 
 
 # Dependencies
